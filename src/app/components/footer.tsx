@@ -3,7 +3,7 @@ import { LINK_INSTAGRAM, LINK_LINKED_IN, LINK_GITHUB } from "../constants";
 
 export const Footer = () => {
   return (
-    <footer className="flex flex-row gap-4 py-16">
+    <footer className="flex flex-row gap-4 py-24">
       <a href={LINK_INSTAGRAM} target="_blank" className="text-blue-300">
         <button className="text-lg">
           <FaInstagram />

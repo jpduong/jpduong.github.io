@@ -17,6 +17,7 @@ export const ContentBlock = ({ content }: Props) => {
       rounded
       "
       href={href}
+      target="_blank"
     >
       {/* transition duration-200 ease-in-out transform hover:-translate-y-1 duration-200 ease-in-out */}
       <div className="p-4">

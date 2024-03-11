@@ -1,3 +1,11 @@
+export const CONTENT_PROJECTS = [
+  {
+    title: "My Journey To Code",
+    body: "My career transition to code",
+    href: "https://medium.com/@jamesphongduong/my-personal-journey-to-code-618e4b75e9b",
+  },
+];
+
 export const CONTENT_BUILDING = [
   {
     title: "Building A",
@@ -8,14 +16,6 @@ export const CONTENT_BUILDING = [
     title: "Building B",
     subtitle: "Craft",
     body: "Building Craft Implementing interfaces and interactions.",
-  },
-];
-
-export const CONTENT_PROJECTS = [
-  {
-    title: "My Journey To Code",
-    body: "My career transition to code",
-    href: "",
   },
 ];
 

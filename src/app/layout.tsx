@@ -16,7 +16,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${fonts.rubik.variable} bg-gray-900 text-white`}
+      className={`${fonts.rubik.variable} bg-gray-900 text-white lowercase`}
     >
       <body>
         <main className="p-8">
