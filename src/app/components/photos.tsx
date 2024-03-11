@@ -8,7 +8,6 @@ type Photo = {
 const photos: Photo[] = [
   { src: "images/basketball.webp", alt: "basketball" },
   { src: "images/keyboard.webp", alt: "keyboard" },
-  { src: "images/car.webp", alt: "car" },
 ];
 
 export const Photos = () => {
