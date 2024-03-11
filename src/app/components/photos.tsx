@@ -15,9 +15,9 @@ export const Photos = () => {
   return (
     <Section title="photos">
       <div className="flex flex-wrap">
-        {photos.map((photo, idx) => (
+        {photos.map(({ src, alt }, idx) => (
           <div key={idx} className="w-full md:w-1/2 p-2">
-            <img src={photo.src} alt={photo.alt} className="w-full h-auto" />
+            <img src={src} alt={alt} className="w-full h-auto" />
           </div>
         ))}
       </div>
