@@ -19,7 +19,7 @@ export default function RootLayout({
     <html lang="en" className={fonts.rubik.variable}>
       <body>
         <Providers>
-          <ColorModeScript initialColorMode={theme.config.initialColorMode} />
+          {/* <ColorModeScript initialColorMode={theme.config.initialColorMode} /> */}
           {children}
         </Providers>
       </body>
