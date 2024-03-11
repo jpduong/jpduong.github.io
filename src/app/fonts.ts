@@ -1,7 +1,7 @@
 // app/fonts.ts
 import { Rubik, Inter } from "next/font/google";
 
-const rubik = Rubik({
+const rubik = Inter({
   subsets: ["latin"],
   variable: "--font-rubik",
 });

@@ -1,95 +1,94 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+"use client";
+
+import {
+  Avatar,
+  Button,
+  Container,
+  HStack,
+  Heading,
+  IconButton,
+  ListItem,
+  Text,
+  UnorderedList,
+  useColorMode,
+  Link,
+  VStack,
+  Divider,
+  SimpleGrid,
+  Box,
+} from "@chakra-ui/react";
+import { ContentBlock } from "./components/ui/content-block";
+import {
+  CONTENT_BUILDING,
+  CONTENT_PROJECTS,
+  CONTENT_POSTS,
+  LINK_LEONARDO,
+  LINK_LINKED_IN,
+  LINK_INSTAGRAM,
+  LINK_GITHUB,
+} from "./constants";
+import { MoonIcon, SunIcon } from "@chakra-ui/icons";
+import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 
 export default function Home() {
+  const { colorMode, toggleColorMode } = useColorMode();
+
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+    <main>
+      <Container pt={32}>
+        <HStack justify="space-between" align="center">
+          <Avatar name="James Duong" src="avatar.jpg" size="2xl" mb={8} />
+          <VStack>
+            <Link href={LINK_INSTAGRAM} target="_blank">
+              <IconButton
+                icon={<FaInstagram />}
+                aria-label="instagram"
+                variant="outline"
+              />
+            </Link>
+            <Link href={LINK_LINKED_IN} target="_blank">
+              <IconButton
+                icon={<FaLinkedin />}
+                aria-label="linkedin"
+                variant="outline"
+              />
+            </Link>
+            <Link href={LINK_GITHUB} target="_blank">
+              <IconButton
+                icon={<FaGithub />}
+                aria-label="github"
+                variant="outline"
+              />
+            </Link>
+          </VStack>
+        </HStack>
+        <HStack justify={"space-between"} mb={4}>
+          <Heading>jd</Heading>
+          <IconButton
+            variant="outline"
+            onClick={toggleColorMode}
+            aria-label="toggle color mode button"
+            icon={colorMode === "light" ? <MoonIcon /> : <SunIcon />}
+          />
+        </HStack>
+        <UnorderedList mb={16}>
+          <ListItem>
+            senior software engineer @{" "}
+            <Link href={LINK_LEONARDO} color="blue.300">
+              leonardo.ai
+            </Link>
+          </ListItem>
+          <ListItem>passionate in tech + basketball</ListItem>
+        </UnorderedList>
+        {/* <Text fontWeight="bold" color="grey" mb={4}>
+          Posts
+        </Text>
+        <SimpleGrid columns={{ base: 1, md: 2 }} gap={4}>
+          {CONTENT_PROJECTS.map((content, idx) => (
+            <ContentBlock content={content} key={idx} />
+          ))}
+        </SimpleGrid> */}
+      </Container>
     </main>
   );
 }

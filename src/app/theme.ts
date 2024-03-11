@@ -5,4 +5,6 @@ export const theme = extendTheme({
     heading: "var(--font-rubik)",
     body: "var(--font-rubik)",
   },
+  initialColorMode: "light",
+  useSystemColorMode: false,
 });
