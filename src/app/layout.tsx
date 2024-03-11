@@ -19,7 +19,7 @@ export default function RootLayout({
       className={`${fonts.rubik.variable} bg-gray-900 text-white lowercase`}
     >
       <body>
-        <main className="p-8">
+        <main className="p-4">
           <div className="container max-w-xl mx-auto pt-16">
             {children}
             <Footer />
