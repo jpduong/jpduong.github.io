@@ -1,6 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .custom-hover {
+    @apply transition duration-200 ease-in-out transform hover:-translate-y-1;
+  }
+}
+
 /* 
 :root {
   --max-width: 1100px;

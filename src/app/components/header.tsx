@@ -1,3 +1,5 @@
+import { Link } from "./shared/link";
+
 export const LINK_LEONARDO = `https://app.leonardo.ai`;
 
 export const Header = () => {
@@ -14,9 +16,7 @@ export const Header = () => {
       <ul className="mb-16 list-disc list-inside">
         <li>
           senior software engineer @{" "}
-          <a href={LINK_LEONARDO} className="text-blue-300" target="_blank">
-            leonardo.ai
-          </a>
+          <Link href={LINK_LEONARDO}>leonardo.ai</Link>
         </li>
         <li>passionate in tech + basketball</li>
       </ul>

@@ -1,4 +1,5 @@
 import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { Link } from "./shared/link";
 
 const FOOTER_LINKS = [
   {
@@ -17,13 +18,13 @@ const FOOTER_LINKS = [
 
 export const Footer = () => {
   return (
-    <footer className="flex flex-row gap-4 py-24">
+    <footer className="flex flex-row gap-4 py-4">
       {FOOTER_LINKS.map(({ href, Icon }) => (
-        <a href={href} target="_blank" className="text-blue-300" key={href}>
+        <Link key={href} href={href}>
           <button className="text-lg">
             <Icon />
           </button>
-        </a>
+        </Link>
       ))}
     </footer>
   );

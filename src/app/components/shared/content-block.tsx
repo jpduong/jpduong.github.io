@@ -1,3 +1,6 @@
+import { FiArrowUpRight } from "react-icons/fi";
+import { Link } from "./link";
+
 type Props = {
   content: {
     title: string;
@@ -10,20 +13,11 @@ export const ContentBlock = ({ content }: Props) => {
   const { href, title, body } = content;
 
   return (
-    <a
-      className="
-      border
-      border-blue-300
-      rounded
-      "
-      href={href}
-      target="_blank"
-    >
-      {/* transition duration-200 ease-in-out transform hover:-translate-y-1 duration-200 ease-in-out */}
-      <div className="p-4">
-        <h2 className="text-lg mb-4">{title}</h2>
-        <p>{body}</p>
+    <Link href={href} className="border border-blue-300 rounded">
+      <div className="p-4 flex justify-between">
+        <h2 className="mb-4">{title}</h2>
+        <FiArrowUpRight className="mt-1" />
       </div>
-    </a>
+    </Link>
   );
 };
