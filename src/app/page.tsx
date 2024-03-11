@@ -17,7 +17,7 @@ export default function Home() {
       <ul className="mb-16 list-disc list-inside">
         <li>
           senior software engineer @{" "}
-          <a href={LINK_LEONARDO} className="text-blue-300">
+          <a href={LINK_LEONARDO} className="text-blue-300" target="_blank">
             leonardo.ai
           </a>
         </li>
