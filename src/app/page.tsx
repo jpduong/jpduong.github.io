@@ -1,94 +1,62 @@
 "use client";
 
+import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 import {
-  Avatar,
-  Button,
-  Container,
-  HStack,
-  Heading,
-  IconButton,
-  ListItem,
-  Text,
-  UnorderedList,
-  useColorMode,
-  Link,
-  VStack,
-  Divider,
-  SimpleGrid,
-  Box,
-} from "@chakra-ui/react";
-import { ContentBlock } from "./components/ui/content-block";
-import {
-  CONTENT_BUILDING,
   CONTENT_PROJECTS,
-  CONTENT_POSTS,
+  LINK_GITHUB,
+  LINK_INSTAGRAM,
   LINK_LEONARDO,
   LINK_LINKED_IN,
-  LINK_INSTAGRAM,
-  LINK_GITHUB,
 } from "./constants";
-import { MoonIcon, SunIcon } from "@chakra-ui/icons";
-import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { ContentBlock } from "./components/ui/content-block";
 
 export default function Home() {
-  const { colorMode, toggleColorMode } = useColorMode();
-
   return (
-    <main>
-      <Container pt={32}>
-        <HStack justify="space-between" align="center">
-          <Avatar name="James Duong" src="avatar.jpg" size="2xl" mb={8} />
-          <VStack>
-            <Link href={LINK_INSTAGRAM} target="_blank">
-              <IconButton
-                icon={<FaInstagram />}
-                aria-label="instagram"
-                variant="outline"
-              />
-            </Link>
-            <Link href={LINK_LINKED_IN} target="_blank">
-              <IconButton
-                icon={<FaLinkedin />}
-                aria-label="linkedin"
-                variant="outline"
-              />
-            </Link>
-            <Link href={LINK_GITHUB} target="_blank">
-              <IconButton
-                icon={<FaGithub />}
-                aria-label="github"
-                variant="outline"
-              />
-            </Link>
-          </VStack>
-        </HStack>
-        <HStack justify={"space-between"} mb={4}>
-          <Heading>jd</Heading>
-          <IconButton
-            variant="outline"
-            onClick={toggleColorMode}
-            aria-label="toggle color mode button"
-            icon={colorMode === "light" ? <MoonIcon /> : <SunIcon />}
-          />
-        </HStack>
-        <UnorderedList mb={16}>
-          <ListItem>
+    <main className="py-8">
+      <div className="container max-w-xl mx-auto pt-32">
+        <div className="flex justify-between items-center">
+          <div className="avatar mb-8">
+            <img
+              className="rounded-full w-24 h-24 object-cover"
+              src="avatar.jpg"
+              alt="James Duong"
+            />
+          </div>
+          <div className="flex flex-col gap-4">
+            <a href={LINK_INSTAGRAM} target="_blank" className="text-blue-300">
+              <button>
+                <FaInstagram />
+              </button>
+            </a>
+            <a href={LINK_LINKED_IN} target="_blank" className="text-blue-300">
+              <button>
+                <FaLinkedin />
+              </button>
+            </a>
+            <a href={LINK_GITHUB} target="_blank" className="text-blue-300">
+              <button>
+                <FaGithub />
+              </button>
+            </a>
+          </div>
+        </div>
+        <h1 className="text-4xl font-bold mb-4">jd</h1>
+        <ul className="mb-16 list-disc">
+          <li>
             senior software engineer @{" "}
-            <Link href={LINK_LEONARDO} color="blue.300">
+            <a href={LINK_LEONARDO} className="text-blue-300">
               leonardo.ai
-            </Link>
-          </ListItem>
-          <ListItem>passionate in tech + basketball</ListItem>
-        </UnorderedList>
-        {/* <Text fontWeight="bold" color="grey" mb={4}>
-          Posts
-        </Text>
-        <SimpleGrid columns={{ base: 1, md: 2 }} gap={4}>
+            </a>
+          </li>
+          <li>passionate in tech + basketball</li>
+        </ul>
+        <h3 className="font-bold mb-4">Posts</h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {CONTENT_PROJECTS.map((content, idx) => (
             <ContentBlock content={content} key={idx} />
           ))}
-        </SimpleGrid> */}
-      </Container>
+        </div>
+      </div>
     </main>
   );
 }

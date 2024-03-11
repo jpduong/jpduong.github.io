@@ -1,9 +1,6 @@
 import { fonts } from "@/app/fonts";
 import type { Metadata } from "next";
 import "./globals.css";
-import { Providers } from "./providers";
-import { ColorModeScript } from "@chakra-ui/react";
-import { theme } from "./theme";
 
 export const metadata: Metadata = {
   title: "jd",
@@ -16,13 +13,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={fonts.rubik.variable}>
-      <body>
-        <Providers>
-          {/* <ColorModeScript initialColorMode={theme.config.initialColorMode} /> */}
-          {children}
-        </Providers>
-      </body>
+    <html
+      lang="en"
+      className={`${fonts.rubik.variable} bg-gray-900 text-white`}
+    >
+      <body>{children}</body>
     </html>
   );
 }
